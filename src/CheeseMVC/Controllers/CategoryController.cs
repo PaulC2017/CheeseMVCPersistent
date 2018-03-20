@@ -59,6 +59,26 @@ namespace CheeseMVC.Controllers
             return View(addCategoryViewModel);
         }
 
+        public IActionResult Remove()
+        {
+            ViewBag.title = "Remove Category";
+            ViewBag.categories = context.Categories.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Remove(int[] categoryIds)
+        {
+            foreach (int categoryId in categoryIds)
+            {
+                CheeseCategory theCategory = context.Categories.Single(c => c.ID == categoryId);
+                context.Categories.Remove(theCategory);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Category");
+        }
 
     }
 }

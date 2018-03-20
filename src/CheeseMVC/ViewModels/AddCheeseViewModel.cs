@@ -28,6 +28,7 @@ namespace CheeseMVC.ViewModels
         [Display(Name = "Category")]
         public int CategoryID { get; set; }
 
+      
         public List<SelectListItem> CheeseTypes { get; set; }
 
         public AddCheeseViewModel()  // default consstructor needed to make model binding work in the EntityFramework 

@@ -1,0 +1,20 @@
+﻿@*@{
+        ViewData["Title"] = "Remove";
+    }
+*@
+
+@*<h2>Remove Category</h2>*@
+
+<h2>@ViewBag.title</h2>
+
+<form method="post">
+
+    @foreach (var category in ViewBag.categories)
+    {
+        <input type="checkbox" name="categoryIds" id="@category.ID" value="@category.ID" />
+        <label for="@category.ID">@category.Name</label>
+        <br />
+    }
+
+    <input type="submit" value="Remove Selected Categories(s)" />
+</form>
