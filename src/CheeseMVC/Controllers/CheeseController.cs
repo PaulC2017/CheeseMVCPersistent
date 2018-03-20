@@ -57,8 +57,13 @@ namespace CheeseMVC.Controllers
                 return Redirect("/Cheese");
             }
 
-            
-            return View(addCheeseViewModel);
+            // if model is invalid - user entered invalid data - recreate the AddViewModel to include the cheese categories,
+            // while preserving user input (invalid as it may be)
+
+            AddCheeseViewModel addCheeseViewModel2 = new AddCheeseViewModel(context.Categories.ToList());
+            addCheeseViewModel2.Name = addCheeseViewModel.Name;
+            addCheeseViewModel2.Description = addCheeseViewModel.Description;
+            return View(addCheeseViewModel2);
         }
 
         public IActionResult Remove()
