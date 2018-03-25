@@ -17,6 +17,7 @@ namespace CheeseMVC.Controllers
             context = dbContext;
         }
 
+        
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -28,6 +29,7 @@ namespace CheeseMVC.Controllers
         // MainViewNodel vm = new MainViewModel(Variable);
         public IActionResult Add()
         {
+            
             AddCheeseViewModel addCheeseViewModel = new AddCheeseViewModel(context.Categories.ToList());  //create the ViewModel with the list of cheese types 
             
             return View(addCheeseViewModel);
@@ -56,7 +58,7 @@ namespace CheeseMVC.Controllers
 
                 return Redirect("/Cheese");
             }
-
+             
             // if model is invalid - user entered invalid data - recreate the AddViewModel to include the cheese categories,
             // while preserving user input (invalid as it may be)
 
@@ -64,6 +66,8 @@ namespace CheeseMVC.Controllers
             addCheeseViewModel2.Name = addCheeseViewModel.Name;
             addCheeseViewModel2.Description = addCheeseViewModel.Description;
             return View(addCheeseViewModel2);
+             
+
         }
 
         public IActionResult Remove()

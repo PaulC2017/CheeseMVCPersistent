@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using CheeseMVC.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CheeseMVC.ViewModels
 {
@@ -21,7 +23,7 @@ namespace CheeseMVC.ViewModels
 
         public List<SelectListItem> CheeseTypes { get; set; }
 
-            these two properties are replaced by teh CheeseCategory Model
+            these two properties are replaced by the CheeseCategory Model
         */
 
         [Required]
@@ -31,20 +33,29 @@ namespace CheeseMVC.ViewModels
       
         public List<SelectListItem> CheeseTypes { get; set; }
 
-        public AddCheeseViewModel()  // default consstructor needed to make model binding work in the EntityFramework 
-        {
 
-        }
+       
 
+
+
+
+
+         public AddCheeseViewModel()  // default consstructor needed to make model binding work in the EntityFramework 
+         {
+
+         }
+         
         public AddCheeseViewModel(IEnumerable<CheeseCategory> categories) {
 
-            
-            CheeseTypes = new  List<SelectListItem>();
+           
+
+
+           CheeseTypes = new  List<SelectListItem>();
 
             foreach (CheeseCategory category in categories.ToList())
+          
             {
-               // Console.WriteLine("Value = " + category.ID.ToString() +  "Text = " +  category.Name.ToString());
-                //Console.ReadLine();
+               
 
                 CheeseTypes.Add(new SelectListItem
                 {
