@@ -47,6 +47,8 @@ namespace CheeseMVC.Controllers
 
                 return Redirect("/Menu");
             }
+
+
             return View(addMenuViewModel);
         }
         public IActionResult ViewMenu(int id)

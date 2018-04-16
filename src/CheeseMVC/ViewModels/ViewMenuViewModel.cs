@@ -10,7 +10,7 @@ namespace CheeseMVC.ViewModels
         public IList<CheeseMenu> Items { get; set; }
 
         //default constructor
-        public ViewMenuViewModel()  // default consstructor needed to make model binding work in the EntityFramework 
+        public ViewMenuViewModel()  // default constructor needed to make model binding work in the EntityFramework 
         {
 
         }
