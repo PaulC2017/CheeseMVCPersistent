@@ -1,0 +1,12 @@
+Description
+
+This project created an application that allows the user to define types of cheeses (ie - hard, soft, etc), 
+add cheeses to a data base as well as a description of the cheeses.  In addition, the user can create
+menus of cheeses which when displayed will show each cheese added to the menu, the cheese description
+and the cheese type.
+
+Languages and Technologies
+
+This project uses C#, ASP.NET, EntityFrameWorkCore and Razor for the routing, templates and controllers.  MySQL
+is used to manage the data base housing cheeses,cheese types and menu data.
+
