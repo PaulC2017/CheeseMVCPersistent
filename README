@@ -7,6 +7,5 @@ and the cheese type.
 
 Languages and Technologies
 
-This project uses C#, ASP.NET, EntityFrameWorkCore and Razor for the routing, templates and controllers.  MySQL
-is used to manage the data base housing cheeses,cheese types and menu data.
+This project uses C#, ASP.NET, EntityFrameWorkCore and Razor for the routing, templates and controllers.  MySQL is used to manage the data base housing cheeses,cheese types and menu data.
 
